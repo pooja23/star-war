@@ -1,0 +1,20 @@
+.mat-card {
+    height: 30%;
+
+    .row {
+        margin: 10px;
+        display: flex;
+
+        label {
+            color:#9198a8;
+        }
+
+        span {
+            margin-left: 5px;
+        }
+
+        .col-6 {
+            flex: 0 1 50%;
+        }
+    }
+}

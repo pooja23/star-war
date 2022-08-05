@@ -1,0 +1,8 @@
+<div class="header">
+    <h2>Starwar Films</h2>
+</div>
+<mat-nav-list>
+    <div *ngFor="let link of links; let i = index" class="list-item" [class.active-link]="activeLink === i">
+        <a href="javascript:void(0)" (click)="setFilmDetails(link, i)"> {{ link.title }} </a>
+    </div>
+</mat-nav-list>

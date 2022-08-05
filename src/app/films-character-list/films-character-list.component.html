@@ -1,0 +1,17 @@
+
+    <div class="header">Characters List</div>
+    <mat-progress-spinner *ngIf="showLoader"
+        class="spin-loader"
+        color="primary"
+        mode="indeterminate"
+        value="75">
+    </mat-progress-spinner>
+
+    <ag-grid-angular *ngIf="!showLoader"
+        style="height: 50%;"
+        class="ag-theme-alpine"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs">
+    </ag-grid-angular>
+
+
