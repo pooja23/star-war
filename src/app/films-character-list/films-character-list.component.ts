@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ColDef } from 'ag-grid-community';
+import { Subscription } from 'rxjs';
+import { CharacterListModel } from '../models/character-list.model';
 import { FilmListService } from '../service/film-list.service';
 
 @Component({
@@ -16,16 +18,16 @@ export class FilmsCharacterListComponent implements OnInit, OnDestroy {
     { field: 'gender' }
 ];
 
-  public rowData: any[] = [];
+  public rowData: CharacterListModel[] = [];
   public showLoader: Boolean = true;
 
-  private listSubs: any;
-  private showLoaderSubs: any;
+  private listSubs!: Subscription;
+  private showLoaderSubs!: Subscription;
 
   constructor(private filmListService: FilmListService) { }
 
   ngOnInit(): void {
-    this.listSubs = this.filmListService.characterList$.subscribe( data => {
+    this.listSubs = this.filmListService.characterList$.subscribe( (data : CharacterListModel[]) => {
       this.rowData = data;
     });
 

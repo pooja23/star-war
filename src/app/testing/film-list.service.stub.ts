@@ -1,4 +1,5 @@
 import { Observable } from 'rxjs';
+import { FilmDetailsModel } from '../models/film-details.model';
 
 export class FilmListServiceStub {
     public characterList$ = new Observable((observer) => {
@@ -176,6 +177,6 @@ export class FilmListServiceStub {
         });
     }
 
-    public setSelectedFilmDetails(details: any) {
+    public setSelectedFilmDetails(details: FilmDetailsModel) {
     }
 }

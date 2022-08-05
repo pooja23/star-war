@@ -1,4 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { FilmDetailsModel } from '../models/film-details.model';
 import { FilmListService } from '../service/film-list.service';
 
 @Component({
@@ -8,8 +10,8 @@ import { FilmListService } from '../service/film-list.service';
 })
 export class FilmsDetailsComponent implements OnInit, OnDestroy {
 
-  public details: any;
-  private detailSub: any;
+  public details!: FilmDetailsModel;
+  private detailSub!: Subscription;
   constructor(private filmListService: FilmListService) { }
 
   ngOnInit(): void {
